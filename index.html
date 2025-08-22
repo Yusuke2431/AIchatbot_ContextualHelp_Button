@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャットボット動線検討 - 現行FAB</title>
+    <!-- ベースCSS -->
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <div class="header-content">
+                <h1>現場端 Freelance</h1>
+                <nav class="nav-menu">
+                    <span>チーム</span>
+                    <span>プロジェクト</span>
+                    <span>設定</span>
+                </nav>
+            </div>
+        </header>
+
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>チーム分析</h3>
+                <ul>
+                    <li id="devops" class="menu-item active">DevOps分析</li>
+                    <li id="cycle-time" class="menu-item">サイクルタイム分析</li>
+                    <li id="team-summary" class="menu-item">チームサマリ</li>
+                    <li id="review" class="menu-item">レビュー分析</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h2 id="page-title">DevOps分析</h2>
+                <div class="period-selector">過去3ヶ月間</div>
+            </div>
+
+            <!-- ページコンテンツはJavaScriptで動的に読み込まれます -->
+            <div id="page-content">
+                <!-- 初期読み込み中の表示 -->
+                <div class="loading-indicator" style="text-align: center; padding: 40px; color: #666;">
+                    <div style="font-size: 18px; margin-bottom: 8px;">📊</div>
+                    <div>ページを読み込み中...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab" id="fab">
+        <div class="fab-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <span class="fab-text">お困りごとはありませんか？</span>
+        <div class="fab-arrow">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17l9.2-9.2M17 17V7H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <!-- スマートツールチップ -->
+        <div class="smart-tooltip" id="smartTooltip">
+            <div class="tooltip-content">
+                <span class="tooltip-text">迷っていたらエージェントに質問してみてください</span>
+                <div class="tooltip-arrow"></div>
+            </div>
+        </div>
+        
+        <!-- 波紋アニメーション -->
+        <div class="ripple-animation" id="rippleAnimation"></div>
+    </div>
+
+    <!-- チャットウィンドウ -->
+    <div class="context-chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <h4 id="chatTitle">サポートチャット</h4>
+                <div class="context-info" id="contextInfo">
+                    <span class="context-indicator"></span>
+                    <span class="context-text">一般的なサポート</span>
+                </div>
+            </div>
+            <button class="chat-close" id="chatClose">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        <div class="chat-content">
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message">
+                    <div class="message-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="message-content">
+                        <p id="initialMessage">こんにちは！何かお手伝いできることはありますか？</p>
+                        <div class="message-time">今</div>
+                    </div>
+                </div>
+            </div>
+            <div class="context-suggestions" id="contextSuggestions">
+                <div class="suggestions-header">
+                    <h5>よくある質問</h5>
+                    <select class="suggestions-select" id="suggestionsSelect">
+                        <option value="">質問を選択してください</option>
+                        <!-- 動的に生成される -->
+                    </select>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="メッセージを入力してください..." id="chatInput">
+                <button class="send-button" id="sendButton">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- オーバーレイ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 共通JavaScript -->
+    <script src="js/common.js"></script>
+</body>
+</html>
