@@ -1,0 +1,471 @@
+/* レビュー分析ページ専用スタイル */
+
+/* 共通セクションスタイル */
+.review-summary-section,
+.review-condition-section,
+.pullreq-scatter-section,
+.reviewed-pullreq-section {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    border-left: 4px solid #1e7ed5;
+    padding-left: 12px;
+}
+
+/* メトリクスカード */
+.review-metrics {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.metric-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.metric-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+.metric-unit {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+}
+
+.metric-trend {
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.metric-trend.positive {
+    color: #10b981;
+}
+
+.metric-trend.negative {
+    color: #ef4444;
+}
+
+/* レビューサマリグラフエリア */
+.review-summary-chart {
+    margin-top: 24px;
+}
+
+/* レビューコンディションカード */
+.condition-cards {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.condition-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-value {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.value-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.value-unit {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+}
+
+/* 2カラムセクション */
+.two-column-section {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.column-left,
+.column-right {
+    flex: 1;
+}
+
+.column-header {
+    margin-bottom: 16px;
+}
+
+.column-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* チャートプレースホルダー */
+.chart-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: 250px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    gap: 8px;
+}
+
+.chart-placeholder.large {
+    height: 350px;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+}
+
+.chart-description {
+    font-size: 12px;
+    color: #888;
+}
+
+/* チャート画像スタイル */
+.chart-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-image.large {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* テーブル関連スタイル */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.entries-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.entries-selector label {
+    font-size: 14px;
+    color: #666;
+}
+
+.entries-select {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.table-search {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.table-container {
+    margin-top: 16px;
+    overflow-x: auto;
+}
+
+.pullreq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.pullreq-table th,
+.pullreq-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.pullreq-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.pullreq-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pr-number {
+    font-weight: 600;
+    color: #1e7ed5;
+}
+
+.pr-title {
+    font-size: 13px;
+    color: #666;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-info,
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-placeholder {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ddd;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.approved {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.status-badge.changes-requested {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #1e7ed5;
+}
+
+.pagination-btn.active {
+    background: #1e7ed5;
+    color: white;
+    border-color: #1e7ed5;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .two-column-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .condition-cards {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-metrics {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .metric-card {
+        min-width: auto;
+    }
+    
+    .table-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .pagination-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pagination-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-summary-section,
+    .review-condition-section,
+    .pullreq-scatter-section,
+    .reviewed-pullreq-section {
+        padding: 16px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .chart-image-container {
+        padding: 10px 0;
+    }
+    
+    .chart-image {
+        border-radius: 4px;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric-card {
+    animation: fadeInUp 0.3s ease;
+}
+
+.metric-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.metric-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.condition-card {
+    animation: fadeInUp 0.3s ease;
+}
+
+.condition-card:nth-child(2) {
+    animation-delay: 0.1s;
+}

@@ -1,0 +1,456 @@
+/* チームサマリページ専用スタイル */
+
+/* 共通セクションスタイル */
+.lead-time-summary-section,
+.active-member-summary-section,
+.activity-summary-section {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    border-left: 4px solid #1e7ed5;
+    padding-left: 12px;
+}
+
+/* リードタイムメトリクス */
+.lead-time-metrics {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.metric-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.metric-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.metric-unit {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+.metric-trend {
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.metric-trend.positive {
+    color: #10b981;
+}
+
+.metric-trend.negative {
+    color: #ef4444;
+}
+
+/* チャートコンテナ */
+.chart-container {
+    margin-top: 24px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.chart-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.chart-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0;
+}
+
+.chart-filter select {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+.time-range-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.time-range-btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.time-range-btn:hover {
+    border-color: #1e7ed5;
+    color: #1e7ed5;
+}
+
+.time-range-btn.active {
+    background: #1e7ed5;
+    border-color: #1e7ed5;
+    color: white;
+}
+
+/* チャート凡例 */
+.chart-legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.legend-text {
+    white-space: nowrap;
+}
+
+/* チャート画像コンテナ */
+.chart-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.chart-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-image.large {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* アクティビティメトリクス */
+.activity-metrics {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.activity-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.2s;
+}
+
+.activity-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.activity-icon {
+    flex-shrink: 0;
+}
+
+.icon-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.icon-placeholder.issue {
+    background: #ef4444;
+}
+
+.icon-placeholder.pr {
+    background: #1e7ed5;
+}
+
+.icon-placeholder.merge {
+    background: #10b981;
+}
+
+.icon-placeholder.commit {
+    background: #f59e0b;
+}
+
+.icon-placeholder.review {
+    background: #8b5cf6;
+}
+
+.icon-placeholder::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.activity-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.activity-avatars {
+    margin-top: 8px;
+}
+
+.avatar-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.avatar-placeholder {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ddd;
+    border: 2px solid white;
+    flex-shrink: 0;
+}
+
+.avatar-placeholder:nth-child(1) {
+    background: #ef4444;
+}
+
+.avatar-placeholder:nth-child(2) {
+    background: #1e7ed5;
+}
+
+.avatar-placeholder:nth-child(3) {
+    background: #10b981;
+}
+
+.avatar-more {
+    font-size: 12px;
+    color: #666;
+    margin-left: 4px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .lead-time-metrics {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .metric-card {
+        min-width: auto;
+    }
+    
+    .activity-metrics {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .activity-card {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .chart-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .chart-legend {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lead-time-summary-section,
+    .active-member-summary-section,
+    .activity-summary-section {
+        padding: 16px;
+    }
+    
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .time-range-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .activity-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .activity-content {
+        text-align: center;
+    }
+    
+    .avatar-group {
+        justify-content: center;
+    }
+    
+    .chart-image-container {
+        padding: 10px 0;
+    }
+    
+    .chart-image {
+        border-radius: 4px;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric-card,
+.activity-card {
+    animation: fadeInUp 0.3s ease;
+}
+
+.metric-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.metric-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.activity-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.activity-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.activity-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.activity-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
