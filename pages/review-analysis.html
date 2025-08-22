@@ -1,0 +1,246 @@
+<!-- レビュー分析ページ専用コンテンツ -->
+
+<!-- レビューサマリセクション -->
+<section class="review-summary-section">
+    <div class="section-header">
+        <h3>レビューサマリ</h3>
+        <button class="contextual-help-button" onclick="openContextualHelp('review-summary')">
+            <div class="contextual-help-icon">✦</div>
+            <span class="contextual-help-text">インサイトモードで分析</span>
+        </button>
+    </div>
+    
+    <!-- メトリクスカード -->
+    <div class="review-metrics">
+        <div class="metric-card">
+            <div class="metric-label">レビュー総数</div>
+            <div class="metric-value">
+                <span class="metric-number">821.3</span>
+                <span class="metric-unit">件</span>
+                <span class="metric-trend positive">↑</span>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">レビューコメント総数</div>
+            <div class="metric-value">
+                <span class="metric-number">2.5</span>
+                <span class="metric-unit">件</span>
+                <span class="metric-trend positive">↑</span>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">レビューコメント総数</div>
+            <div class="metric-value">
+                <span class="metric-number">0.5</span>
+                <span class="metric-unit">件</span>
+                <span class="metric-trend negative">↓</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- レビューサマリグラフエリア -->
+    <div class="review-summary-chart">
+        <div class="chart-image-container">
+            <img src="images/review-summary-chart.png" alt="レビューサマリ移動平均推移グラフ" class="chart-image">
+        </div>
+    </div>
+</section>
+
+<!-- レビューコンディションセクション -->
+<section class="review-condition-section">
+    <div class="section-header">
+        <h3>レビューコンディション</h3>
+    </div>
+    
+    <!-- レビューコンディションカード -->
+    <div class="condition-cards">
+        <div class="condition-card">
+            <div class="card-header">
+                <h4>レビュー効率</h4>
+                <div class="card-value">
+                    <span class="value-number">85</span>
+                    <span class="value-unit">%</span>
+                </div>
+            </div>
+        </div>
+        <div class="condition-card">
+            <div class="card-header">
+                <h4>平均レスポンス時間</h4>
+                <div class="card-value">
+                    <span class="value-number">2.3</span>
+                    <span class="value-unit">h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 2カラムセクション -->
+    <div class="two-column-section">
+        <!-- レビュー相関図 -->
+        <div class="column-left">
+            <div class="column-header">
+                <h4>レビュー相関図</h4>
+            </div>
+            <div class="chart-image-container">
+                <img src="images/review-correlation-chart.png" alt="レビュー相関図テーブル" class="chart-image">
+            </div>
+        </div>
+        
+        <!-- レビューリードタイム -->
+        <div class="column-right">
+            <div class="column-header">
+                <h4>レビューリードタイム</h4>
+            </div>
+            <div class="chart-image-container">
+                <img src="images/review-leadtime-chart.png" alt="レビューリードタイムテーブル" class="chart-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- レビュー済みプルリク散布図セクション -->
+<section class="pullreq-scatter-section">
+    <div class="section-header">
+        <h3>レビュー済みプルリク散布図</h3>
+    </div>
+    
+    <div class="chart-image-container">
+        <img src="images/review-scatter-chart.png" alt="レビュー散布図" class="chart-image large">
+    </div>
+</section>
+
+<!-- 選択した期間にレビューされたプルリクセクション -->
+<section class="reviewed-pullreq-section">
+    <div class="section-header">
+        <h3>選択した期間にレビューされたプルリク</h3>
+        <div class="table-controls">
+            <div class="entries-selector">
+                <label>表示件数:</label>
+                <select class="entries-select">
+                    <option value="10">10件</option>
+                    <option value="25">25件</option>
+                    <option value="50">50件</option>
+                    <option value="100">100件</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="検索..." class="table-search">
+            </div>
+        </div>
+    </div>
+    
+    <!-- プルリクテーブル -->
+    <div class="table-container">
+        <table class="pullreq-table">
+            <thead>
+                <tr>
+                    <th>プルリク</th>
+                    <th>作成者</th>
+                    <th>レビュアー</th>
+                    <th>作成日</th>
+                    <th>レビュー完了日</th>
+                    <th>リードタイム</th>
+                    <th>コメント数</th>
+                    <th>ステータス</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="pullreq-info">
+                            <span class="pr-number">#1234</span>
+                            <span class="pr-title">Add new feature for user dashboard</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="user-info">
+                            <div class="avatar-placeholder"></div>
+                            <span>田中太郎</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="reviewer-info">
+                            <div class="avatar-placeholder"></div>
+                            <span>佐藤花子</span>
+                        </div>
+                    </td>
+                    <td>2024-01-15</td>
+                    <td>2024-01-17</td>
+                    <td>2.3h</td>
+                    <td>5</td>
+                    <td>
+                        <span class="status-badge approved">承認済み</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="pullreq-info">
+                            <span class="pr-number">#1233</span>
+                            <span class="pr-title">Fix bug in authentication flow</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="user-info">
+                            <div class="avatar-placeholder"></div>
+                            <span>山田次郎</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="reviewer-info">
+                            <div class="avatar-placeholder"></div>
+                            <span>鈴木三郎</span>
+                        </div>
+                    </td>
+                    <td>2024-01-14</td>
+                    <td>2024-01-16</td>
+                    <td>1.8h</td>
+                    <td>3</td>
+                    <td>
+                        <span class="status-badge approved">承認済み</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="pullreq-info">
+                            <span class="pr-number">#1232</span>
+                            <span class="pr-title">Update documentation for API endpoints</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="user-info">
+                            <div class="avatar-placeholder"></div>
+                            <span>高橋四郎</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="reviewer-info">
+                            <div class="avatar-placeholder"></div>
+                            <span>田中太郎</span>
+                        </div>
+                    </td>
+                    <td>2024-01-13</td>
+                    <td>2024-01-15</td>
+                    <td>4.2h</td>
+                    <td>8</td>
+                    <td>
+                        <span class="status-badge changes-requested">変更要求</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- ページネーション -->
+    <div class="pagination-container">
+        <div class="pagination-info">
+            1-10 of 156 entries
+        </div>
+        <div class="pagination-controls">
+            <button class="pagination-btn" disabled>前へ</button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">次へ</button>
+        </div>
+    </div>
+</section>

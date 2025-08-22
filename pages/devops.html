@@ -1,0 +1,500 @@
+<!-- DevOps分析ページ専用コンテンツ -->
+
+<!-- DevOps指標とグラフ統合セクション -->
+<section class="metrics-chart-section">
+    <!-- メトリクスタブ -->
+    <div class="metrics-tabs">
+        <div class="metric-card active" id="deploy-freq-tab">
+            <div class="metric-header">
+                <div class="metric-label">デプロイ頻度</div>
+                <button class="help-button" title="期間中にデプロイされた回数を表します">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="metric-value">17.3<span class="unit">件</span></div>
+            <div class="metric-trend negative">(-0.9件)</div>
+        </div>
+        <div class="metric-card" id="lead-time-tab">
+            <div class="metric-header">
+                <div class="metric-label">変更のリードタイム</div>
+                <button class="help-button" title="コード変更からデプロイまでの平均時間を示します">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="metric-value">42.2<span class="unit">h</span></div>
+            <div class="metric-trend negative">(+12.6h)</div>
+        </div>
+        <div class="metric-card" id="change-failure-tab">
+            <div class="metric-header">
+                <div class="metric-label">変更障害率</div>
+                <button class="help-button" title="デプロイ後に障害が発生した割合を示します">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="metric-value">0.6<span class="unit">%</span></div>
+            <div class="metric-trend positive">(-0.3%)</div>
+        </div>
+        <div class="metric-card" id="mttr-tab">
+            <div class="metric-header">
+                <div class="metric-label">平均修復時間</div>
+                <button class="help-button" title="障害が発生してから修復までの平均時間を示します">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="metric-value">3.1<span class="unit">h</span></div>
+            <div class="metric-trend positive">(-36.4h)</div>
+        </div>
+    </div>
+
+    <!-- チャートコンテナ -->
+    <div class="chart-wrapper">
+        <div class="chart-header">
+            <h3>移動平均推移</h3>
+            <div class="chart-controls">
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    土日祝をグラフ表示
+                </label>
+                <button class="contextual-help-button" onclick="openContextualHelp('devops-trend')">
+                    <div class="contextual-help-icon">✦</div>
+                    <span class="contextual-help-text">インサイトモードで分析</span>
+                </button>
+            </div>
+        </div>
+        <div class="chart-container">
+            <img src="images/devops-trend-chart.png" alt="デプロイ頻度の移動平均推移" class="chart-image">
+        </div>
+    </div>
+</section>
+
+<!-- 設定期間にマージされたプルリク -->
+<section class="pr-section">
+    <h3>設定期間にマージされたプルリク</h3>
+    <div class="table-container">
+        <table class="pr-table">
+            <thead>
+                <tr>
+                    <th>プルリク</th>
+                    <th>変更行数</th>
+                    <th>オープンからレビューまでの時間</th>
+                    <th>レビューからアプルーブまでの時間</th>
+                    <th>アプルーブからマージまでの時間</th>
+                    <th>オープンからマージまでの時間</th>
+                    <th>変更のリードタイム</th>
+                    <th>マージ日</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>449</span>
+                            <div class="code-details">
+                                <span class="addition">+365</span>
+                                <span class="deletion">-84</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>4.4</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>4.4</td>
+                    <td>8.4</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>2367</span>
+                            <div class="code-details">
+                                <span class="addition">+1104</span>
+                                <span class="deletion">-1263</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>1.9</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>1.9</td>
+                    <td>4.6</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-17-04-45</td>
+                    <td>
+                        <div class="code-change">
+                            <span>122</span>
+                            <div class="code-details">
+                                <span class="addition">+121</span>
+                                <span class="deletion">-1</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.7</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-14-35-23</td>
+                    <td>
+                        <div class="code-change">
+                            <span>287</span>
+                            <div class="code-details">
+                                <span class="addition">+198</span>
+                                <span class="deletion">-89</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>2.1</td>
+                    <td>0.3</td>
+                    <td>0.1</td>
+                    <td>2.4</td>
+                    <td>5.7</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-15-01-22</td>
+                    <td>
+                        <div class="code-change">
+                            <span>156</span>
+                            <div class="code-details">
+                                <span class="addition">+134</span>
+                                <span class="deletion">-22</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>1.2</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>1.4</td>
+                    <td>3.8</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-18-17-19-11</td>
+                    <td>
+                        <div class="code-change">
+                            <span>543</span>
+                            <div class="code-details">
+                                <span class="addition">+412</span>
+                                <span class="deletion">-131</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>6.2</td>
+                    <td>0.4</td>
+                    <td>0.2</td>
+                    <td>6.6</td>
+                    <td>12.8</td>
+                    <td>2025/08/18 (月)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-14-19-03</td>
+                    <td>
+                        <div class="code-change">
+                            <span>89</span>
+                            <div class="code-details">
+                                <span class="addition">+67</span>
+                                <span class="deletion">-22</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>0.8</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>0.9</td>
+                    <td>2.1</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-14-18-51</td>
+                    <td>
+                        <div class="code-change">
+                            <span>234</span>
+                            <div class="code-details">
+                                <span class="addition">+189</span>
+                                <span class="deletion">-45</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>3.4</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>3.6</td>
+                    <td>7.2</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>678</span>
+                            <div class="code-details">
+                                <span class="addition">+523</span>
+                                <span class="deletion">-155</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>5.7</td>
+                    <td>0.3</td>
+                    <td>0.2</td>
+                    <td>6.0</td>
+                    <td>11.4</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>345</span>
+                            <div class="code-details">
+                                <span class="addition">+267</span>
+                                <span class="deletion">-78</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>2.8</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>3.0</td>
+                    <td>6.3</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-09-48-03</td>
+                    <td>
+                        <div class="code-change">
+                            <span>198</span>
+                            <div class="code-details">
+                                <span class="addition">+156</span>
+                                <span class="deletion">-42</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>1.6</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>1.7</td>
+                    <td>4.2</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>412</span>
+                            <div class="code-details">
+                                <span class="addition">+334</span>
+                                <span class="deletion">-78</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>4.1</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>4.3</td>
+                    <td>8.9</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-18</td>
+                    <td>
+                        <div class="code-change">
+                            <span>756</span>
+                            <div class="code-details">
+                                <span class="addition">+589</span>
+                                <span class="deletion">-167</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>7.3</td>
+                    <td>0.5</td>
+                    <td>0.2</td>
+                    <td>7.8</td>
+                    <td>15.6</td>
+                    <td>2025/08/18 (月)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>289</span>
+                            <div class="code-details">
+                                <span class="addition">+223</span>
+                                <span class="deletion">-66</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>2.4</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>2.6</td>
+                    <td>5.8</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-09-24-32</td>
+                    <td>
+                        <div class="code-change">
+                            <span>167</span>
+                            <div class="code-details">
+                                <span class="addition">+134</span>
+                                <span class="deletion">-33</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>1.3</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>1.4</td>
+                    <td>3.7</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19-09-21-26</td>
+                    <td>
+                        <div class="code-change">
+                            <span>523</span>
+                            <div class="code-details">
+                                <span class="addition">+412</span>
+                                <span class="deletion">-111</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>4.8</td>
+                    <td>0.3</td>
+                    <td>0.2</td>
+                    <td>5.1</td>
+                    <td>10.3</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>398</span>
+                            <div class="code-details">
+                                <span class="addition">+312</span>
+                                <span class="deletion">-86</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>3.2</td>
+                    <td>0.2</td>
+                    <td>0.1</td>
+                    <td>3.4</td>
+                    <td>7.1</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Release 2025-08-19</td>
+                    <td>
+                        <div class="code-change">
+                            <span>145</span>
+                            <div class="code-details">
+                                <span class="addition">+112</span>
+                                <span class="deletion">-33</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>1.1</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>1.2</td>
+                    <td>3.1</td>
+                    <td>2025/08/19 (火)</td>
+                    <td>
+                        <button class="action-button">•••</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <span>1 - 20 件を表示中 (全1107件)</span>
+            <div class="page-controls">
+                <button class="page-button active">1</button>
+                <button class="page-button">2</button>
+                <button class="page-button">3</button>
+                <button class="page-button">4</button>
+                <button class="page-button">5</button>
+                <span class="page-ellipsis">…</span>
+                <button class="page-button">56</button>
+                <button class="page-button next">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

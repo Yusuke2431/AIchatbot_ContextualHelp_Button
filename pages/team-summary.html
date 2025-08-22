@@ -1,0 +1,219 @@
+<!-- チームサマリページ専用コンテンツ -->
+
+<!-- リードタイムサマリセクション -->
+<section class="lead-time-summary-section">
+    <div class="section-header">
+        <h3>リードタイムサマリ</h3>
+        <button class="contextual-help-button" onclick="openContextualHelp('team-leadtime-summary')">
+            <div class="contextual-help-icon">✦</div>
+            <span class="contextual-help-text">インサイトモードで分析</span>
+        </button>
+    </div>
+    
+    <div class="lead-time-metrics">
+        <div class="metric-card">
+            <div class="metric-label">オープンからマージまでの平均時間</div>
+            <div class="metric-value">
+                <span class="metric-number">3.9</span>
+                <span class="metric-unit">h</span>
+                <span class="metric-trend positive">↑</span>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">オープンからレビューまでの平均時間</div>
+            <div class="metric-value">
+                <span class="metric-number">2.5</span>
+                <span class="metric-unit">h</span>
+                <span class="metric-trend positive">↑</span>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">レビューからマージまでの平均時間</div>
+            <div class="metric-value">
+                <span class="metric-number">1.3</span>
+                <span class="metric-unit">h</span>
+                <span class="metric-trend negative">↓</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- リードタイム推移グラフ -->
+    <div class="chart-container">
+        <div class="chart-header">
+            <h4>移動平均推移</h4>
+            <div class="chart-controls">
+                <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    土日祝をグラフ表示
+                </label>
+                <div class="chart-filter">
+                    <select class="activity-filter">
+                        <option value="all">すべてのアクティビティ</option>
+                        <option value="commits">コミット</option>
+                        <option value="reviews">レビュー</option>
+                        <option value="merges">マージ</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-image-container">
+            <img src="images/team-lead-time-chart.png" alt="リードタイム推移グラフ" class="chart-image">
+        </div>
+    </div>
+</section>
+
+<!-- アクティブメンバーサマリセクション -->
+<section class="active-member-summary-section">
+    <div class="section-header">
+        <h3>アクティブメンバーサマリ</h3>
+    </div>
+    
+    <!-- アクティブメンバー推移グラフ -->
+    <div class="chart-container">
+        <div class="chart-header">
+            <h4>稼働人数の移動平均推移</h4>
+            <div class="chart-controls">
+                <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    土日祝をグラフ表示
+                </label>
+            </div>
+        </div>
+        
+        <div class="chart-image-container">
+            <img src="images/active-member-chart.png" alt="アクティブメンバー推移グラフ" class="chart-image">
+        </div>
+    </div>
+</section>
+
+<!-- アクティビティサマリセクション -->
+<section class="activity-summary-section">
+    <div class="section-header">
+        <h3>アクティビティサマリ</h3>
+    </div>
+    
+    <!-- アクティビティメトリクス -->
+    <div class="activity-metrics">
+        <div class="activity-card">
+            <div class="activity-icon">
+                <div class="icon-placeholder issue"></div>
+            </div>
+            <div class="activity-content">
+                <div class="activity-label">イシュー作成数</div>
+                <div class="activity-value">677</div>
+                <div class="activity-avatars">
+                    <div class="avatar-group">
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-more">…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-card">
+            <div class="activity-icon">
+                <div class="icon-placeholder pr"></div>
+            </div>
+            <div class="activity-content">
+                <div class="activity-label">プルリク作成数</div>
+                <div class="activity-value">5113</div>
+                <div class="activity-avatars">
+                    <div class="avatar-group">
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-more">…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-card">
+            <div class="activity-icon">
+                <div class="icon-placeholder merge"></div>
+            </div>
+            <div class="activity-content">
+                <div class="activity-label">マージ済みプルリク数</div>
+                <div class="activity-value">4735</div>
+                <div class="activity-avatars">
+                    <div class="avatar-group">
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-more">…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-card">
+            <div class="activity-icon">
+                <div class="icon-placeholder commit"></div>
+            </div>
+            <div class="activity-content">
+                <div class="activity-label">コミット数</div>
+                <div class="activity-value">6927</div>
+                <div class="activity-avatars">
+                    <div class="avatar-group">
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-more">…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-card">
+            <div class="activity-icon">
+                <div class="icon-placeholder review"></div>
+            </div>
+            <div class="activity-content">
+                <div class="activity-label">レビュー数</div>
+                <div class="activity-value">4638</div>
+                <div class="activity-avatars">
+                    <div class="avatar-group">
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-more">…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- アクティビティ推移グラフ -->
+    <div class="chart-container">
+        <div class="chart-header">
+            <h4>アクティビティの推移</h4>
+            <div class="chart-controls">
+                <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    土日祝をグラフ表示
+                </label>
+                <div class="time-range-buttons">
+                    <button class="time-range-btn active">デイリー</button>
+                    <button class="time-range-btn">ウィークリー</button>
+                    <button class="time-range-btn">マンスリー</button>
+                </div>
+                <div class="chart-filter">
+                    <select class="activity-filter">
+                        <option value="all">すべてのアクティビティ</option>
+                        <option value="issues">イシュー</option>
+                        <option value="prs">プルリクエスト</option>
+                        <option value="commits">コミット</option>
+                        <option value="reviews">レビュー</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-image-container">
+            <img src="images/activity-trend-chart.png" alt="アクティビティ推移グラフ" class="chart-image large">
+        </div>
+    </div>
+</section>

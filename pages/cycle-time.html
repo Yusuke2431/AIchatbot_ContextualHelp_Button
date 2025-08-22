@@ -1,0 +1,211 @@
+<!-- サイクルタイム分析ページ専用コンテンツ -->
+
+<!-- サイクルタイム平均値セクション -->
+<section class="cycle-time-summary-section">
+    <!-- ヘッダー -->
+    <div class="section-header">
+        <h3>サイクルタイム平均値</h3>
+        <button class="contextual-help-button" onclick="openContextualHelp('cycle-time-summary')">
+            <div class="contextual-help-icon">✦</div>
+            <span class="contextual-help-text">インサイトモードで分析</span>
+        </button>
+    </div>
+    
+    <!-- 合計値エリア -->
+    <div class="total-summary">
+        <div class="total-label">合計値</div>
+        <div class="total-value">
+            <span class="star-icon">⭐</span>
+            <span class="total-number">36.4</span>
+            <span class="total-unit">h</span>
+        </div>
+    </div>
+    
+    <!-- 詳細メトリクス（ボーダー区切り） -->
+    <div class="cycle-time-breakdown">
+        <div class="breakdown-item">
+            <div class="breakdown-content">
+                <div class="breakdown-label">コミットからオープンまでの平均時間</div>
+                <div class="breakdown-info-icon">ⓘ</div>
+            </div>
+            <div class="breakdown-value">
+                <span class="star-icon">⭐</span>
+                <span class="breakdown-number">32.7</span>
+                <span class="breakdown-unit">h</span>
+            </div>
+        </div>
+        
+        <div class="breakdown-item">
+            <div class="breakdown-content">
+                <div class="breakdown-label">オープンからレビューまでの平均時間</div>
+                <div class="breakdown-info-icon">ⓘ</div>
+            </div>
+            <div class="breakdown-value">
+                <span class="star-icon">⭐</span>
+                <span class="breakdown-number">2.5</span>
+                <span class="breakdown-unit">h</span>
+            </div>
+        </div>
+        
+        <div class="breakdown-item">
+            <div class="breakdown-content">
+                <div class="breakdown-label">レビューからアプルーブまでの平均時間</div>
+                <div class="breakdown-info-icon">ⓘ</div>
+            </div>
+            <div class="breakdown-value">
+                <span class="star-icon">⭐</span>
+                <span class="breakdown-number">0.6</span>
+                <span class="breakdown-unit">h</span>
+            </div>
+        </div>
+        
+        <div class="breakdown-item">
+            <div class="breakdown-content">
+                <div class="breakdown-label">アプルーブからマージまでの平均時間</div>
+                <div class="breakdown-info-icon">ⓘ</div>
+            </div>
+            <div class="breakdown-value">
+                <span class="star-icon">⭐</span>
+                <span class="breakdown-number">0.6</span>
+                <span class="breakdown-unit">h</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- サイクルタイムの推移グラフセクション -->
+<section class="cycle-time-chart-section">
+    <div class="chart-header">
+        <h3>サイクルタイムの推移</h3>
+        <div class="chart-controls">
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+                土日祝をグラフ表示
+            </label>
+            <div class="chart-period-buttons">
+                <button class="period-button">デイリー</button>
+                <button class="period-button active">ウィークリー</button>
+                <button class="period-button">マンスリー</button>
+            </div>
+        </div>
+    </div>
+    <div class="chart-container">
+        <div class="chart-image-container">
+            <img src="images/cycle-time-chart.png" alt="サイクルタイムの推移グラフ" class="cycle-time-chart-image">
+        </div>
+    </div>
+    <div class="chart-link">
+        <a href="#" class="detail-link">レビューリードタイム詳細</a>
+    </div>
+</section>
+
+<!-- 選択した期間にアクティビティのあったプルリクセクション -->
+<section class="pr-activity-section">
+    <div class="section-header">
+        <h3>選択した期間にアクティビティのあったプルリク</h3>
+        <p class="period-info">選択期間 : 2025/07/28 (月) - 2025/08/03 (日)</p>
+    </div>
+    
+    <div class="table-container">
+        <table class="cycle-time-table">
+            <thead>
+                <tr>
+                    <th>プルリク</th>
+                    <th>ステータス</th>
+                    <th>変更行数</th>
+                    <th>コミットからオープンまでの時間</th>
+                    <th>オープンからレビューまでの時間</th>
+                    <th>レビューからアプルーブまでの時間</th>
+                    <th>アプルーブからマージまでの時間</th>
+                    <th>オープンからマージまでの時間</th>
+                    <th>オープン日</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- プルリクエストデータ（簡略版） -->
+                <tr>
+                    <td class="pr-title">
+                        <a href="#" class="pr-link">feat(odin): 既存会員がFindy IDへ連携できる機能を本番で有効化</a>
+                    </td>
+                    <td><span class="status-badge merged">マージ</span></td>
+                    <td>
+                        <div class="code-change">
+                            <span>4</span>
+                            <div class="code-details">
+                                <span class="addition">+2</span>
+                                <span class="deletion">-2</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>133.9</td>
+                    <td>0.9</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>0.9</td>
+                    <td>2025/08/06 (水)</td>
+                </tr>
+                <tr>
+                    <td class="pr-title">
+                        <a href="#" class="pr-link">feat(vivi): Tools既存会員がFindy IDへ連携できる機能を本番環境において有効化</a>
+                    </td>
+                    <td><span class="status-badge merged">マージ</span></td>
+                    <td>
+                        <div class="code-change">
+                            <span>4</span>
+                            <div class="code-details">
+                                <span class="addition">+2</span>
+                                <span class="deletion">-2</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>133.7</td>
+                    <td>0.9</td>
+                    <td>0.1</td>
+                    <td>0.1</td>
+                    <td>0.9</td>
+                    <td>2025/08/06 (水)</td>
+                </tr>
+                <tr>
+                    <td class="pr-title">
+                        <a href="#" class="pr-link">Release 2025-08-01-18-32-02</a>
+                    </td>
+                    <td><span class="status-badge closed">クローズ</span></td>
+                    <td>
+                        <div class="code-change">
+                            <span>5383</span>
+                            <div class="code-details">
+                                <span class="addition">+5000</span>
+                                <span class="deletion">-383</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>937.9</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>2025/08/01 (金)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pagination">
+            <span>1 - 20 件を表示中 (全411件)</span>
+            <div class="page-controls">
+                <button class="page-button active">1</button>
+                <button class="page-button">2</button>
+                <button class="page-button">3</button>
+                <button class="page-button">4</button>
+                <button class="page-button">5</button>
+                <span class="page-ellipsis">…</span>
+                <button class="page-button">21</button>
+                <button class="page-button next">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
