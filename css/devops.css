@@ -16,6 +16,14 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
+/* スタンドアロンコンテキストヘルプボタン */
+.standalone-contextual-help {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 12px;
+    margin-bottom: 4px;
+}
+
 /* メトリクスタブ */
 .metrics-tabs {
     display: flex;
@@ -267,6 +275,10 @@
 }
 
 @media (max-width: 768px) {
+    .standalone-contextual-help {
+        padding: 0 16px 8px;
+    }
+    
     .metrics-tabs {
         flex-direction: column;
     }
@@ -295,5 +307,16 @@
     
     .table-container {
         overflow-x: auto;
+    }
+    
+    .contextual-help-text {
+        display: none;
+    }
+    
+    .contextual-help-button {
+        padding: 8px;
+        min-width: 36px;
+        height: 36px;
+        border-radius: 50%;
     }
 }

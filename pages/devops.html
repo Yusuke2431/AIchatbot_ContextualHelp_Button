@@ -1,8 +1,15 @@
 <!-- DevOps分析ページ専用コンテンツ -->
 
+<!-- コンテキストヘルプボタン（スタンドアロン） -->
+<div class="standalone-contextual-help">
+    <button class="contextual-help-button" onclick="openContextualHelp('devops-trend')">
+        <div class="contextual-help-icon">✦</div>
+        <span class="contextual-help-text">インサイトモードで分析</span>
+    </button>
+</div>
+
 <!-- DevOps指標とグラフ統合セクション -->
 <section class="metrics-chart-section">
-    <!-- メトリクスタブ -->
     <div class="metrics-tabs">
         <div class="metric-card active" id="deploy-freq-tab">
             <div class="metric-header">
@@ -68,10 +75,6 @@
                     <span class="checkmark"></span>
                     土日祝をグラフ表示
                 </label>
-                <button class="contextual-help-button" onclick="openContextualHelp('devops-trend')">
-                    <div class="contextual-help-icon">✦</div>
-                    <span class="contextual-help-text">インサイトモードで分析</span>
-                </button>
             </div>
         </div>
         <div class="chart-container">
